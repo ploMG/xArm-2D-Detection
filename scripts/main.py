@@ -15,7 +15,7 @@ if len(sys.argv) >= 2:
 else:
     try:
         parser = ConfigParser()
-        parser.read('D:/Users/Tej/Downloads/xArm-Python-SDK-master/example/wrapper/robot.conf')
+        parser.read('.../xArm-Python-SDK-master/example/wrapper/robot.conf') #insert path to xArm SDK here, ctrl+F "..." or scroll to line 88
         ip = parser.get('xArm', 'ip')
     except:
         ip = input('Please input the xArm ip address:')
@@ -85,7 +85,7 @@ def end():
     arm.set_state(0)
 
 
-model = Model(r"D:/Users/Tej/Programs/Anaconda3/envs/env_full/Lib/site-packages/vosk/vosk-model-small-en-us-0.15")
+model = Model(r".../vosk-model-small-en-us-0.15") #insert path to vosk model here
 recognizer = KaldiRecognizer(model, 16000)
 
 mic = pyaudio.PyAudio()

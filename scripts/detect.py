@@ -36,7 +36,7 @@ from pathlib import Path
 import torch
 
 #########################################
-sys.path.append('C:/Users/Tej/PycharmProjects/pythonProject')
+sys.path.append('.../scripts')			#insert path to scripts folder here and in line 177
 #########################################
 
 FILE = Path(__file__).resolve()
@@ -174,7 +174,7 @@ def run(
                         c = int(cls)  # integer class
                         label = None if hide_labels else (names[c] if hide_conf else f'{names[c]} {conf:.2f}')
                         annotator.box_label(xyxy, label, color=colors(c, True))
-                        with open(r"C:\Users\Tej\PycharmProjects\pythonProject\transcription.txt", 'r') as file:
+                        with open(r"...\scripts\transcription.txt", 'r') as file:
                             select = file.read()
                             file.close()
                         object_name = names[int(cls)]

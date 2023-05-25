@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 2
+names: ['bottle', 'trash']
+
+roboflow:
+  workspace: d-3fand
+  project: auto-mnadg
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/d-3fand/auto-mnadg/dataset/1

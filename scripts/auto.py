@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import os
 import sys
-sys.path.insert(1, r"D:/Users/Tej/Downloads/yolov5-master/")
+sys.path.insert(1, r".../yolov5-master/") #insert path to YOLOv5 here, ctrl+F "..." or replace all
 
 # capture single image from webcam
 
@@ -15,9 +15,9 @@ cam = cv2.VideoCapture(cam_port)
 
 # Clear results from previous runs
 def clear():
-    clear_return = open(r"D:\Users\Tej\Downloads\yolov5-master\return.txt", 'w')
+    clear_return = open(r"...\yolov5-master\return.txt", 'w')
     clear_return.close()
-    clear_points = open(r"D:\Users\Tej\Downloads\yolov5-master\points.txt", 'w')
+    clear_points = open(r"...\yolov5-master\points.txt", 'w')
     clear_points.close()
 
 def remove():
@@ -56,7 +56,7 @@ while object_name == "trash":
 
     # Reading the input using the webcam
     ret, img = cam.read()
-    path = 'D:/Users/Tej/Downloads/yolov5-master/data/images'
+    path = '.../yolov5-master/data/images'
 
     # If image was captured, then transform and detect
     if ret:
@@ -78,15 +78,15 @@ while object_name == "trash":
         cv2.waitKey(0)
 
         # YOLOv5 detection on exported image
-        os.system('cmd /c "d: & cd \\Users\\Tej\\Downloads\\yolov5-master & python detect.py --source D:\\Users\\Tej\\Downloads\\yolov5-master\\data\\images\\exp.jpg --weights D:\\Users\\Tej\\Downloads\\yolov5-master\\runs\\train\\auto_det\\weights\\best.pt --conf 0.25"')
+        os.system('cmd /c "cd ...\\yolov5-master & python detect.py --source ...\\yolov5-master\\data\\images\\exp.jpg --weights ...\\yolov5-master\\runs\\train\\bottle_det\\weights\\best.pt --conf 0.25"')
 
         # Read bounding box coordinates
-        with open(r"D:\Users\Tej\Downloads\yolov5-master\points.txt", 'r') as point:
+        with open(r"...\yolov5-master\points.txt", 'r') as point:
             coor = point.read().split()
             point.close()
 
         # Read bounding box label
-        with open(r"D:\Users\Tej\Downloads\yolov5-master\return.txt", 'r') as label:
+        with open(r"...\yolov5-master\return.txt", 'r') as label:
             object_name = label.read()
             label.close()
 

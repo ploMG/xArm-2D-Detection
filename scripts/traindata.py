@@ -13,7 +13,7 @@ cam = cv2.VideoCapture(cam_port)
 
 # reading the input using the camera
 ret, img = cam.read()
-path = 'D:/Users/Tej/Downloads/yolov5-master/data/images'
+path = '.../yolov5-master/data/images' #insert path to YOLOv5 here
 
 #If image was detected without any error, show result
 if ret:
@@ -29,7 +29,7 @@ if ret:
         result = cv2.warpPerspective(img, matrix, (550, 400))
 
         # saving image in local storage
-        cv2.imwrite(os.path.join(path, 'exp.jpg'), result)
+        cv2.imwrite(os.path.join(path, 'exp.jpg'), result) #increment exp1, exp2, exp3, etc. to gather image set
         cv2.waitKey(0)
 
 else:
