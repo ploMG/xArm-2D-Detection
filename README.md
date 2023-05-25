@@ -5,7 +5,7 @@
 This project utilizes a microphone and Vosk speech recognition to receive a user's voice command, which will activate an overhead camera and run YOLOv5 object detection to locate an object's position. An xArm 5 Lite with a gripper attachment will then execute a retrieval routine and return to its initial position to repeat the process.
 
 <p align="center">
-  <img src="https://github.com/ploMG/xArm-2D-Detection/assets/128610413/c0471c78-a205-4b13-ae64-b030bdcbcbda">
+  <img src="https://github.com/ploMG/xArm-2D-Detection/assets/128610413/16b094ce-6d5e-4348-8bea-8a8873521560">
 </p>
   
 There are two routines:
@@ -30,7 +30,7 @@ When main.py is run, an audio stream begins that will continuously transcribe th
 The camera's coordinates are not inherently synced to the xArm's, so commands from the OpenCV library are used to correct the images it takes before running YOLOv5. Calibration is done by taking images of the arm at each of the four corners of the defined environment and finding the pixel coordinates.
 
 <p align="center">
-  <img src="https://github.com/ploMG/xArm-2D-Detection/assets/128610413/1d47ea77-cd9d-4987-bfbb-1c3494917e13">
+  <img src="https://github.com/ploMG/xArm-2D-Detection/assets/128610413/5386357c-7dd7-473e-b57c-923e3d5b86e4">
 </p>
 
 ### YOLOv5
@@ -46,16 +46,16 @@ This project uses a dataset that differentiates between bottles and crushed bott
 After detecting an object, the generated bounding box coordinates will be used to calculate the arm's X and Y position.
 
 <p align="center">
-  <img src="https://github.com/ploMG/xArm-2D-Detection/assets/128610413/3f577b51-995b-4418-9c5c-0a188fcb12a9">
+  <img src="https://github.com/ploMG/xArm-2D-Detection/assets/128610413/61819c1b-db9c-4f9b-8c8b-f80ab79a3dde">
 </p>
 
 
 ## Samples
 
-https://github.com/ploMG/xArm-2D-Detection/assets/128610413/51946f42-1930-4df6-95a6-03c7511d5516
+https://github.com/ploMG/xArm-2D-Detection/assets/128610413/a0752bbd-86e3-4ae1-9345-518af98d8ec0
 
 > Automatic mode demonstration
 
-https://github.com/ploMG/xArm-2D-Detection/assets/128610413/f5670124-a470-45c7-91a2-337205ba0a15
+https://github.com/ploMG/xArm-2D-Detection/assets/128610413/8a1496c2-414e-479d-a269-641ea5f1d9dd
 
 > Manual mode demonstration
