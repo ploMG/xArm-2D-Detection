@@ -35,15 +35,17 @@ import sys
 from pathlib import Path
 import torch
 
-#########################################
-sys.path.append('.../scripts')			#insert path to scripts folder here and in line 177
-#########################################
-
 FILE = Path(__file__).resolve()
 ROOT = FILE.parents[0]  # YOLOv5 root directory
 if str(ROOT) not in sys.path:
     sys.path.append(str(ROOT))  # add ROOT to PATH
 ROOT = Path(os.path.abspath(Path.cwd()))  # relative
+
+# Define path to project directory
+###################################
+project_path = r'C:\Users\user\PycharmProjects\xArm-3D-Detection'
+sys.path.append(project_path)
+###################################
 
 from models.common import DetectMultiBackend
 from utils.dataloaders import IMG_FORMATS, VID_FORMATS, LoadImages, LoadScreenshots, LoadStreams
@@ -174,7 +176,7 @@ def run(
                         c = int(cls)  # integer class
                         label = None if hide_labels else (names[c] if hide_conf else f'{names[c]} {conf:.2f}')
                         annotator.box_label(xyxy, label, color=colors(c, True))
-                        with open(r"...\scripts\transcription.txt", 'r') as file:
+                        with open(os.path.join(project_path, 'transcription.txt'), 'r') as file:
                             select = file.read()
                             file.close()
                         object_name = names[int(cls)]
