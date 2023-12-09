@@ -16,7 +16,6 @@ There are two routines:
 
 *Note: Parameters for the arm, such as movement speed and gripper strength, can be adjusted as necessary. Check [xArm API](https://github.com/xArm-Developer/xArm-Python-SDK/blob/master/doc/api/xarm_api.md) for more info.*
 
-
 ## Setup
 
 Directory paths should be set within main.py and detect.py. Explanations for each component of the detection environment can be found below:
@@ -32,7 +31,7 @@ When main.py is run, an audio stream begins that will continuously transcribe th
 The cameras' coordinates are not inherently synced to the xArm's, so functions from the OpenCV library are used to preprocess the captures prior to running YOLOv5. Calibration is done by taking images of the arm at each of the four corners of the defined environment and finding the pixel coordinates.
 
 <p align="center">
-  <img src="https://github.com/ploMG/xArm-2D-Detection/assets/128610413/5386357c-7dd7-473e-b57c-923e3d5b86e4">
+  <img src="https://github.com/ploMG/xArm-3D-Detection/assets/128610413/ad3573ca-e7ff-4636-846d-4c71b55ad68c">
 </p>
 
 ### YOLOv5
@@ -48,9 +47,12 @@ This project uses a dataset that differentiates between bottles and crushed bott
 After detecting an object, the generated bounding box coordinates will be used to calculate the arm's X,Y, and Z position, as well as the width of the object for the gripper.
 
 <p align="center">
-  <img src="https://github.com/ploMG/xArm-2D-Detection/assets/128610413/61819c1b-db9c-4f9b-8c8b-f80ab79a3dde">
+  <img src="https://github.com/ploMG/xArm-3D-Detection/assets/128610413/2ab7920e-763c-4f25-a425-67b58a9d93ac">
 </p>
 
+<p align="center">
+  <img src="https://github.com/ploMG/xArm-3D-Detection/assets/128610413/b85cee18-ccf6-41fc-96ef-1997d5e50164">
+</p>
 
 ## Samples
 
